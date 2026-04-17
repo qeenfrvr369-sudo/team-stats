@@ -1,7 +1,7 @@
 // src/data/teams.ts
 import { Team } from '../types';
 
-export const teams: Team[] = [
+export const teams = [
   {
     id: "chonburi",
     name: "Chonburi FC",
@@ -10,8 +10,14 @@ export const teams: Team[] = [
     city: "Чонбури",
     stadium: "Chonburi Stadium",
     founded: 1997,
-    mainColor: "#0033A0",        // синий
-    secondaryColor: "#FFFFFF"
+    mainColor: "#0033A0",
+    secondaryColor: "#FFFFFF",
+    coach: {
+      name: "Александр Кержаков",
+      nationality: "Россия",
+      age: 42,
+      bio: "Главный тренер Чонбури с 2024 года."
+    }
   },
   {
     id: "guangzhou",
@@ -21,7 +27,13 @@ export const teams: Team[] = [
     city: "Гуанчжоу",
     stadium: "Tianhe Stadium",
     founded: 2011,
-    mainColor: "#FFD700",        // жёлтый
-    secondaryColor: "#000000"
+    mainColor: "#FFD700",
+    secondaryColor: "#000000",
+    coach: {
+      name: "Фабио Каннаваро",
+      nationality: "Италия",
+      age: 52,
+      bio: "Легендарный защитник, главный тренер Гуанчжоу."
+    }
   }
 ];
