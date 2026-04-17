@@ -6,33 +6,43 @@ export type Team = {
   shortName: string;
   logo: string;
   city: string;
-  stadium?: string;
-  founded?: number;
-  mainColor: string;           // основной цвет команды
+  stadium: string;
+  founded: number;
+  mainColor: string;
   secondaryColor?: string;
+  coach: Coach;
+};
+
+export type Coach = {
+  id: string;
+  name: string;
+  nationality: string;
+  age: number;
+  photo?: string;
+  bio?: string;
 };
 
 export type Player = {
   id: string;
-  teamId: string;              // "chonburi" или "guangzhou"
+  teamId: string;
   name: string;
   nickname?: string;
   photo: string;
   position: string;
   number: number;
-  nationality?: string;
-  age?: number;
+  nationality: string;
+  age: number;
   height?: number;
-  bio?: string;
+  bio: string;                    // ← добавил
 
   stats: {
     games: number;
     goals: number;
     assists: number;
     points: number;
-    minutes?: number;
-    yellowCards?: number;
-    redCards?: number;
+    minutes: number;
+    yellowCards: number;          // ← добавил
+    redCards: number;             // ← добавил
   };
 
   awards: Array<{
@@ -49,53 +59,6 @@ export type Player = {
   }>;
 };
 
-export type LeagueTableRow = {
-  position: number;
-  teamId: string;
-  teamName: string;
-  played: number;
-  wins: number;
-  draws: number;
-  losses: number;
-  goalsFor: number;
-  goalsAgainst: number;
-  goalDifference: number;
-  points: number;
-};
-
-export type Match = {
-  id: string;
-  date: string;
-  time?: string;
-  homeTeamId: string;
-  awayTeamId: string;
-  homeScore?: number;
-  awayScore?: number;
-  status: "upcoming" | "finished" | "live";
-  competition?: string;
-};
-
-export type Award = {
-  id: string;
-  title: string;
-  season: string;
-  winnerId?: string;
-  nominees?: string[];
-  description?: string;
-};
-
-export type Transfer = {
-  id: string;
-  playerId: string;
-  fromTeamId: string;
-  toTeamId?: string;
-  type: "transfer" | "loan" | "free";
-  status: "rumor" | "confirmed" | "completed";
-  date?: string;
-  fee?: string;
-};
-
-// === Две команды ===
 export const teams: Team[] = [
   {
     id: "chonburi",
@@ -105,8 +68,15 @@ export const teams: Team[] = [
     city: "Чонбури",
     stadium: "Chonburi Stadium",
     founded: 1997,
-    mainColor: "#0033A0",        // синий
-    secondaryColor: "#FFFFFF"
+    mainColor: "#0033A0",
+    secondaryColor: "#FFFFFF",
+    coach: {
+      id: "coach1",
+      name: "Liman Lisuashev",
+      nationality: "France",
+      age: 124,
+      bio: "Легендарный защитник, главный тренер Гуанчжоу."
+    }
   },
   {
     id: "guangzhou",
@@ -116,7 +86,14 @@ export const teams: Team[] = [
     city: "Гуанчжоу",
     stadium: "Tianhe Stadium",
     founded: 1954,
-    mainColor: "#FFD700",        // жёлтый
-    secondaryColor: "#000000"
+    mainColor: "#FFD700",
+    secondaryColor: "#000000",
+    coach: {
+      id: "coach2",
+      name: "Ilja Homuz",
+      nationality: "Россия",
+      age: 22,
+      bio: "Главный тренер Чонбури с 2026 года."
+    }
   }
 ];

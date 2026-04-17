@@ -13,7 +13,17 @@ export const mockPlayers: Player[] = [
     number: 10,
     nationality: "Россия",
     age: 24,
-    stats: { games: 18, goals: 14, assists: 7, points: 21, minutes: 1420 },
+    height: 182,
+    bio: "Лучший бомбардир команды в последних двух сезонах. Отличается высокой скоростью и точным ударом.",
+    stats: {
+      games: 18,
+      goals: 14,
+      assists: 7,
+      points: 21,
+      minutes: 1420,
+      yellowCards: 2,
+      redCards: 0
+    },
     awards: [
       { title: "MVP сезона", season: "2025/26", type: "team" },
       { title: "Лучший бомбардир", season: "2025/26", type: "league" }
@@ -27,6 +37,7 @@ export const mockPlayers: Player[] = [
       { date: "05.12", points: 21 }
     ]
   },
+
   {
     id: "2",
     teamId: "chonburi",
@@ -37,8 +48,20 @@ export const mockPlayers: Player[] = [
     number: 8,
     nationality: "Россия",
     age: 22,
-    stats: { games: 20, goals: 6, assists: 12, points: 18 },
-    awards: [{ title: "Лучший ассистент", season: "2025/26", type: "team" }],
+    height: 168,
+    bio: "Мастер голевых передач и контроля мяча в центре поля.",
+    stats: {
+      games: 20,
+      goals: 6,
+      assists: 12,
+      points: 18,
+      minutes: 1650,
+      yellowCards: 3,
+      redCards: 0
+    },
+    awards: [
+      { title: "Лучший ассистент", season: "2025/26", type: "team" }
+    ],
     progress: [
       { date: "01.09", points: 2 },
       { date: "15.09", points: 4 },
@@ -60,8 +83,20 @@ export const mockPlayers: Player[] = [
     number: 9,
     nationality: "Китай",
     age: 26,
-    stats: { games: 19, goals: 12, assists: 5, points: 17 },
-    awards: [{ title: "Лучший бомбардир команды", season: "2025/26", type: "team" }],
+    height: 185,
+    bio: "Быстрый и техничный форвард, лидер атаки Гуанчжоу.",
+    stats: {
+      games: 19,
+      goals: 12,
+      assists: 5,
+      points: 17,
+      minutes: 1580,
+      yellowCards: 1,
+      redCards: 0
+    },
+    awards: [
+      { title: "Лучший бомбардир команды", season: "2025/26", type: "team" }
+    ],
     progress: [
       { date: "01.09", points: 4 },
       { date: "15.09", points: 7 },
@@ -71,17 +106,28 @@ export const mockPlayers: Player[] = [
       { date: "05.12", points: 17 }
     ]
   },
+
   {
     id: "4",
     teamId: "guangzhou",
     name: "Ван Чжан",
     nickname: "Iron Wall",
     photo: "/players/wangzhang.jpg",
-    position: "Защитник",
+    position: "Центральный защитник",
     number: 5,
     nationality: "Китай",
     age: 28,
-    stats: { games: 21, goals: 1, assists: 3, points: 4 },
+    height: 190,
+    bio: "Надёжный защитник, капитан обороны команды.",
+    stats: {
+      games: 21,
+      goals: 1,
+      assists: 3,
+      points: 4,
+      minutes: 1890,
+      yellowCards: 4,
+      redCards: 1
+    },
     awards: [],
     progress: [
       { date: "01.09", points: 1 },
